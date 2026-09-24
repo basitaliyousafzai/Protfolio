@@ -415,6 +415,80 @@
             transform: translateY(-3px);
         }
 
+        /* Professional profile and project enhancements */
+        .hero-meta {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin: 1.5rem 0 2rem;
+        }
+
+        .hero-meta span, .project-badge {
+            padding: 0.45rem 0.9rem;
+            border: 1px solid rgba(255, 255, 255, 0.22);
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.08);
+            color: var(--text-light);
+            font-size: 0.85rem;
+            font-weight: 600;
+            backdrop-filter: blur(8px);
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-top: 1.5rem;
+        }
+
+        .social-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.65rem 1rem;
+            border-radius: 999px;
+            color: white;
+            text-decoration: none;
+            background: rgba(255, 255, 255, 0.12);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            transition: transform 0.3s ease, background 0.3s ease;
+        }
+
+        .social-link:hover { color: white; transform: translateY(-3px); background: rgba(255, 255, 255, 0.22); }
+
+        .project-category {
+            color: var(--highlight);
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            margin-bottom: 0.7rem;
+        }
+
+        .project-card { height: 100%; }
+        .project-content { height: 100%; display: flex; flex-direction: column; }
+        .project-content > p { flex-grow: 1; }
+        .project-links { align-items: center; }
+        .project-link.project-label {
+            width: auto;
+            height: auto;
+            padding: 0.65rem 0.85rem;
+            border-radius: 999px;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .profile-strip {
+            margin-top: 2.5rem;
+            padding: 1rem 1.25rem;
+            border-radius: 16px;
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(168, 85, 247, 0.1));
+            border: 1px solid rgba(59, 130, 246, 0.18);
+        }
+
         /* Education Section */
         .education-card {
             background: white;
@@ -718,10 +792,18 @@
     <section id="home" class="hero-section">
         <div class="container hero-content">
             <h1 class="hero-title animate__animated animate__fadeInDown">Basit Ali</h1>
-            <p class="hero-subtitle animate__animated animate__fadeInUp animate__delay-1s">Full Stack Developer</p>
-            <div class="d-flex justify-content-center gap-3 animate__animated animate__fadeIn animate__delay-1s">
+            <p class="hero-subtitle animate__animated animate__fadeInUp animate__delay-1s"><span id="hero-typing">Full-Stack Software Engineer</span></p>
+            <div class="hero-meta animate__animated animate__fadeIn animate__delay-1s">
+                <span>.NET &amp; Angular</span><span>SQL Server</span><span>2+ Years Experience</span><span>Open to Work</span>
+            </div>
+            <div class="d-flex justify-content-center gap-3 flex-wrap animate__animated animate__fadeIn animate__delay-1s">
                 <a href="#contact" class="btn-hero">Get in Touch</a>
                 <a href="#projects" class="btn-hero">Explore Projects</a>
+            </div>
+            <div class="social-links animate__animated animate__fadeIn animate__delay-2s">
+                <a class="social-link" href="https://github.com/basitaliyousafzai" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a>
+                <a class="social-link" href="https://www.linkedin.com/in/basit-ali-yousafzai/" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                <a class="social-link" href="https://basitali-one.vercel.app" target="_blank" rel="noopener"><i class="fas fa-globe"></i> Portfolio</a>
             </div>
         </div>
     </section>
@@ -732,8 +814,9 @@
             <h2 class="section-title">About Me</h2>
             <div class="about-content">
                 <h3>Innovative Full Stack Developer</h3>
-                <p>I'm Basit Ali, a passionate Full Stack Developer based in Rawalpindi, Pakistan, with over 2 years of experience in building robust, user-centric web applications. Specializing in .NET Core, ASP.NET MVC, and Angular, I excel at creating seamless front-end experiences with HTML, CSS, and JavaScript, and optimizing backend systems with SQL Server, PostgreSQL, and MongoDB.</p>
-                <p>My mission is to deliver high-quality, scalable solutions that empower businesses. With a keen eye for detail and a collaborative mindset, I thrive in solving complex challenges and driving innovation through clean, maintainable code.</p>
+                <p>I'm Basit Ali, a Full-Stack Software Engineer based in Rawalpindi, Pakistan, with over 2 years of experience building robust, user-centric web applications. I currently work at <strong>Multi-Tech Solutions</strong>, where I design enterprise systems, dashboards, APIs, warehouse workflows, and e-commerce solutions.</p>
+                <p>My core focus is the .NET ecosystem: ASP.NET Core, ASP.NET MVC, C#, Entity Framework, SQL Server, Angular, and modern frontend development. I care about clean architecture, secure role-based systems, database performance, responsive interfaces, and maintainable code.</p>
+                <div class="profile-strip"><strong>Currently open to:</strong> Remote, hybrid, and international software engineering opportunities.</div>
             </div>
         </div>
     </section>
@@ -857,7 +940,7 @@
                 <div class="timeline-item animate__animated animate__fadeInUp">
                     <div class="timeline-date">03/2024 - Present</div>
                     <h3 class="timeline-title">Full Stack Developer</h3>
-                    <h4 class="timeline-subtitle">MultiTech Solutions, Rawalpindi</h4>
+                    <h4 class="timeline-subtitle">Multi-Tech Solutions, Rawalpindi</h4>
                     <p class="timeline-text">
                         - Developed and optimized CMS systems and interactive dashboards using .NET Core, Entity Framework, and SQL Server.<br>
                         - Built responsive front-end interfaces with Angular, HTML, CSS, and Bootstrap.<br>
@@ -893,115 +976,29 @@
     </section>
 
     <section id="projects" class="section">
-    <div class="container">
-        <h2 class="section-title">Featured Projects</h2>
-        <div class="row">
-            <div class="col-lg-4 col-md-6">
-                <div class="project-card animate__animated animate__fadeInUp">
-                    <div class="project-content">
-                        <h3 class="project-title">Dwatson.co</h3>
-                        <p>Developed an e-commerce platform for product listings and sales, enhancing user experience and engagement.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">ASP.NET MVC</span>
-                            <span class="tech-tag">C#</span>
-                            <span class="tech-tag">SQL Server</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://dwatson.co" target="_blank" class="project-link"><i class="fas fa-link"></i></a>
-                            <a href="#" class="project-link"><i class="fab fa-github"></i></a>
-                        </div>
-                    </div>
-                </div>
+        <div class="container">
+            <h2 class="section-title">Professional Project Portfolio</h2>
+            <p class="text-center mb-5">Selected client, enterprise, and academic work. Project details and website links are based on my <a href="https://www.linkedin.com/in/basit-ali-yousafzai/" target="_blank" rel="noopener">LinkedIn profile</a>.</p>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6"><div class="project-card animate__animated animate__fadeInUp"><div class="project-content"><div class="project-category">Multi-Tech Solutions · Full-Stack .NET</div><h3 class="project-title">Hajj Organizers Association of Pakistan</h3><p>High-performance ASP.NET applications with core-module UI, business logic, optimized SQL Server databases, Entity Framework models, APIs, migrations, and usability improvements.</p><div class="project-tech"><span class="tech-tag">ASP.NET MVC</span><span class="tech-tag">Entity Framework</span><span class="tech-tag">SQL Server</span></div><div class="project-links"><a href="https://www.hoap.org.pk" target="_blank" rel="noopener" class="project-link project-label">Live website <i class="fas fa-arrow-up-right-from-square"></i></a></div></div></div></div>
+                <div class="col-lg-4 col-md-6"><div class="project-card animate__animated animate__fadeInUp animate__delay-1s"><div class="project-content"><div class="project-category">Multi-Tech Solutions · Full-Stack</div><h3 class="project-title">ButtKarahi</h3><p>Restaurant admin panel for order management, menu updates, and customer tracking, designed to reduce manual errors and improve staff workflow.</p><div class="project-tech"><span class="tech-tag">ASP.NET MVC</span><span class="tech-tag">C#</span><span class="tech-tag">SQL Server</span></div><div class="project-links"><a href="https://bk.mtsapp.net" target="_blank" rel="noopener" class="project-link project-label">Live website <i class="fas fa-arrow-up-right-from-square"></i></a></div></div></div></div>
+                <div class="col-lg-4 col-md-6"><div class="project-card animate__animated animate__fadeInUp"><div class="project-content"><div class="project-category">Multi-Tech Solutions · E-commerce</div><h3 class="project-title">Dwatson.co</h3><p>E-commerce platform for product listings, customer interactions, and online sales with ASP.NET MVC frontend and backend integration.</p><div class="project-tech"><span class="tech-tag">ASP.NET MVC</span><span class="tech-tag">C#</span><span class="tech-tag">SQL Server</span></div><div class="project-links"><a href="https://dwatson.co" target="_blank" rel="noopener" class="project-link project-label">Live website <i class="fas fa-arrow-up-right-from-square"></i></a></div></div></div></div>
+                <div class="col-lg-4 col-md-6"><div class="project-card animate__animated animate__fadeInUp animate__delay-1s"><div class="project-content"><div class="project-category">Multi-Tech Solutions · Warehouse</div><h3 class="project-title">HBWH.Dwatson.co</h3><p>Warehouse management system for inventory tracking, order management, staff control, and real-time stock updates.</p><div class="project-tech"><span class="tech-tag">ASP.NET Core</span><span class="tech-tag">JavaScript</span><span class="tech-tag">SQL Server</span></div><div class="project-links"><a href="https://hbwh.dwatson.co" target="_blank" rel="noopener" class="project-link project-label">Live website <i class="fas fa-arrow-up-right-from-square"></i></a></div></div></div></div>
+                <div class="col-lg-4 col-md-6"><div class="project-card animate__animated animate__fadeInUp"><div class="project-content"><div class="project-category">Multi-Tech Solutions · Business Website</div><h3 class="project-title">Margalla Packages Industry</h3><p>Responsive corporate website with product listings, contact forms, and company information to strengthen digital presence.</p><div class="project-tech"><span class="tech-tag">ASP.NET MVC</span><span class="tech-tag">HTML</span><span class="tech-tag">CSS</span><span class="tech-tag">SQL Server</span></div><div class="project-links"><a href="https://www.margallapackagesindustry.com" target="_blank" rel="noopener" class="project-link project-label">Live website <i class="fas fa-arrow-up-right-from-square"></i></a></div></div></div></div>
+                <div class="col-lg-4 col-md-6"><div class="project-card animate__animated animate__fadeInUp animate__delay-1s"><div class="project-content"><div class="project-category">Multi-Tech Solutions · Web Development</div><h3 class="project-title">Nadeem Plastic</h3><p>Responsive business website with interactive product catalog, service details, and company background for desktop and mobile users.</p><div class="project-tech"><span class="tech-tag">ASP.NET MVC</span><span class="tech-tag">C#</span><span class="tech-tag">SQL Server</span></div><div class="project-links"><a href="https://nadeemplastic.com" target="_blank" rel="noopener" class="project-link project-label">Live website <i class="fas fa-arrow-up-right-from-square"></i></a></div></div></div></div>
+                <div class="col-lg-4 col-md-6"><div class="project-card animate__animated animate__fadeInUp"><div class="project-content"><div class="project-category">Multi-Tech Solutions · Web Development</div><h3 class="project-title">Nadir Brothers</h3><p>Responsive corporate website covering product catalog, company profile, and contact details to improve visibility and lead generation.</p><div class="project-tech"><span class="tech-tag">HTML</span><span class="tech-tag">CSS</span><span class="tech-tag">JavaScript</span><span class="tech-tag">ASP.NET MVC</span></div><div class="project-links"><a href="https://nadirbrothers.com" target="_blank" rel="noopener" class="project-link project-label">Live website <i class="fas fa-arrow-up-right-from-square"></i></a></div></div></div></div>
+                <div class="col-lg-4 col-md-6"><div class="project-card animate__animated animate__fadeInUp animate__delay-1s"><div class="project-content"><div class="project-category">Academic Project · MERN</div><h3 class="project-title">School Management</h3><p>School-management website for Pindi Foundation using the MERN stack.</p><div class="project-tech"><span class="tech-tag">MongoDB</span><span class="tech-tag">React.js</span><span class="tech-tag">MERN</span></div><div class="project-links"><a href="https://github.com/basitaliyousafzai" target="_blank" rel="noopener" class="project-link project-label">GitHub profile <i class="fab fa-github"></i></a></div></div></div></div>
             </div>
-            <div class="col-lg-4 col-md-6">
-                <div class="project-card animate__animated animate__fadeInUp animate__delay-1s">
-                    <div class="project-content">
-                        <h3 class="project-title">ButtKarahi Admin Panel</h3>
-                        <p>Created an admin panel for managing orders, menus, and customer details, improving operational efficiency.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">ASP.NET MVC</span>
-                            <span class="tech-tag">C#</span>
-                            <span class="tech-tag">SQL Server</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://buttkarahi.net" target="_blank" class="project-link"><i class="fas fa-link"></i></a>
-                            <a href="#" class="project-link"><i class="fab fa-github"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <div class="project-card animate__animated animate__fadeInUp">
-                    <div class="project-content">
-                        <h3 class="project-title">Margalla Packages Industry</h3>
-                        <p>Built a responsive corporate website with product listings and contact forms, boosting digital presence.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">ASP.NET MVC</span>
-                            <span class="tech-tag">HTML</span>
-                            <span class="tech-tag">CSS</span>
-                            <span class="tech-tag">SQL Server</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://margallapackages.com" target="_blank" class="project-link"><i class="fas fa-link"></i></a>
-                            <a href="#" class="project-link"><i class="fab fa-github"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <div class="project-card animate__animated animate__fadeInUp animate__delay-1s">
-                    <div class="project-content">
-                        <h3 class="project-title">HBWH.Dwatson.co</h3>
-                        <p>Developed a warehouse management system for inventory tracking and order management, optimizing operations.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">ASP.NET Core</span>
-                            <span class="tech-tag">JavaScript</span>
-                            <span class="tech-tag">SQL Server</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="#" class="project-link"><i class="fas fa-link"></i></a>
-                            <a href="#" class="project-link"><i class="fab fa-github"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <div class="project-card animate__animated animate__fadeInUp">
-                    <div class="project-content">
-                        <h3 class="project-title">Talha Clinic Management System</h3>
-                        <p>Developed a desktop application for patient records, prescriptions, and inventory management, improving clinic efficiency.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">C#</span>
-                            <span class="tech-tag">WinForms</span>
-                            <span class="tech-tag">SQL Server</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="#" class="project-link"><i class="fas fa-link"></i></a>
-                            <a href="#" class="project-link"><i class="fab fa-github"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <div class="project-card animate__animated animate__fadeInUp animate__delay-1s">
-                    <div class="project-content">
-                        <h3 class="project-title">FT Engineering Management System</h3>
-                        <p>Developed a web application with admin and staff portals for task and resource management using ASP.NET MVC, C#, and SQL Server.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">ASP.NET MVC</span>
-                            <span class="tech-tag">C#</span>
-                            <span class="tech-tag">SQL Server</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="#" class="project-link"><i class="fas fa-link"></i></a>
-                            <a href="#" class="project-link"><i class="fab fa-github"></i></a>
-                        </div>
-                    </div>
-                </div>
+
+            <h2 class="section-title mt-5">Featured GitHub Repositories</h2>
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6"><div class="project-card"><div class="project-content"><h3 class="project-title">BussinessAutomationSuite</h3><p>Business automation project.</p><div class="project-links"><a href="https://github.com/basitaliyousafzai/BussinessAutomationSuite" target="_blank" rel="noopener" class="project-link project-label">Repository <i class="fab fa-github"></i></a></div></div></div></div>
+                <div class="col-lg-3 col-md-6"><div class="project-card"><div class="project-content"><h3 class="project-title">clinicos-saas</h3><p>Clinic-focused SaaS project.</p><div class="project-links"><a href="https://github.com/basitaliyousafzai/clinicos-saas" target="_blank" rel="noopener" class="project-link project-label">Repository <i class="fab fa-github"></i></a></div></div></div></div>
+                <div class="col-lg-3 col-md-6"><div class="project-card"><div class="project-content"><h3 class="project-title">EcommerceWebsite</h3><p>ASP.NET MVC e-commerce store.</p><div class="project-links"><a href="https://github.com/basitaliyousafzai/EcommerceWebsite" target="_blank" rel="noopener" class="project-link project-label">Repository <i class="fab fa-github"></i></a></div></div></div></div>
+                <div class="col-lg-3 col-md-6"><div class="project-card"><div class="project-content"><h3 class="project-title">ProManagementSystem</h3><p>Management-system project.</p><div class="project-links"><a href="https://github.com/basitaliyousafzai/ProManagementSystem" target="_blank" rel="noopener" class="project-link project-label">Repository <i class="fab fa-github"></i></a></div></div></div></div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
     <!-- Education Section -->
     <section id="education" class="section">
@@ -1049,7 +1046,7 @@
                         <div class="contact-icon"><i class="fas fa-envelope"></i></div>
                         <div class="contact-text">
                             <h4>Email</h4>
-                            <p><a href="mailto:basitaliyousaf786@gmail.com">basitaliyousaf786@gmail.com</a></p>
+                            <p><a href="mailto:basitaliyousafzai143@gmail.com">basitaliyousafzai143@gmail.com</a></p>
                         </div>
                     </div>
                     <div class="contact-item">
@@ -1070,7 +1067,21 @@
                         <div class="contact-icon"><i class="fab fa-linkedin"></i></div>
                         <div class="contact-text">
                             <h4>LinkedIn</h4>
-                            <p><a href="https://www.linkedin.com/in/basit-ali-yousafzai" target="_blank">basit-ali-yousafzai</a></p>
+                            <p><a href="https://www.linkedin.com/in/basit-ali-yousafzai/" target="_blank">basit-ali-yousafzai</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fas fa-globe"></i></div>
+                        <div class="contact-text">
+                            <h4>Portfolio</h4>
+                            <p><a href="https://basitali-one.vercel.app" target="_blank" rel="noopener">basitali-one.vercel.app</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fab fa-github"></i></div>
+                        <div class="contact-text">
+                            <h4>GitHub</h4>
+                            <p><a href="https://github.com/basitaliyousafzai" target="_blank" rel="noopener">github.com/basitaliyousafzai</a></p>
                         </div>
                     </div>
                 </div>
@@ -1101,6 +1112,17 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
     <script>
+        // Professional hero title rotation
+        const heroTyping = document.getElementById('hero-typing');
+        const heroPhrases = ['Full-Stack Software Engineer', 'ASP.NET & Angular Developer', 'Building Scalable Enterprise Systems'];
+        let heroPhraseIndex = 0;
+        setInterval(() => {
+            heroPhraseIndex = (heroPhraseIndex + 1) % heroPhrases.length;
+            heroTyping.classList.add('animate__animated', 'animate__fadeIn');
+            heroTyping.textContent = heroPhrases[heroPhraseIndex];
+            setTimeout(() => heroTyping.classList.remove('animate__animated', 'animate__fadeIn'), 700);
+        }, 3200);
+
         // Particle.js Configurations
         particlesJS('particles-js', {
             particles: {
